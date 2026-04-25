@@ -1,0 +1,58 @@
+.services { background: var(--gray-50); }
+.services__header { text-align: center; margin-bottom: 64px; }
+.services__header .section-subtitle { margin: 0 auto; }
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 36px 28px; border: 1.5px solid var(--gray-100);
+  position: relative; overflow: hidden;
+  transition: var(--transition);
+  animation: fadeUp .5s ease forwards;
+  opacity: 0;
+  cursor: pointer;
+}
+.service-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-mid));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .35s ease;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--blue-light); }
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card__icon {
+  font-size: 42px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center;
+  width: 72px; height: 72px;
+  background: var(--blue-light); border-radius: 18px;
+}
+.service-card__title { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+.service-card__desc  { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+.service-card__tags  { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.service-card__arrow {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--blue-light); color: var(--blue-primary);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.service-card:hover .service-card__arrow { background: var(--blue-primary); color: white; }
+
+/* Skeleton */
+.services__skeleton { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.skeleton-card {
+  height: 260px; border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer { 0%{background-position:200%} 100%{background-position:-200%} }
+
+@media (max-width: 1024px) { .services__grid { grid-template-columns: repeat(2, 1fr); } .services__skeleton { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .services__grid { grid-template-columns: 1fr; } .services__skeleton { grid-template-columns: 1fr; } }
