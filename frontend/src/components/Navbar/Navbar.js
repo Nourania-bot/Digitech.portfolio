@@ -30,8 +30,8 @@ export default function Navbar({ onAdminClick }) {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container container">
         {/* Logo */}
-        <a className="navbar__brand" href="#home" onClick={() => handleNav('#home')}>
-          <img src="/images/logo.png" alt="Digitech Logo" className="navbar__logo" />
+        <a className="navbar__brand" href="#home" onClick={() => handleNav('#home')} onDoubleClick={onAdminClick}>          
+        <img src="/images/logo.png" alt="Digitech Logo" className="navbar__logo" />
           <span className="navbar__name">Digitech</span>
         </a>
 
