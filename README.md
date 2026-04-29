@@ -52,16 +52,6 @@ Site sur **http://localhost:3000**
 
 ---
 
-## 🔑 Accès Admin
-
-| Email             | Mot de passe |
-|-------------------|--------------|
-| admin@digitech.mg | Admin@2025   |
-
-Accès via le bouton **menu burger** → **Espace Admin**
-
----
-
 ## 🌐 API Routes
 
 | Méthode | Route                   | Auth | Description          |
