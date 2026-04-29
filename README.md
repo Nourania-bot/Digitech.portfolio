@@ -40,15 +40,14 @@ cp .env.example .env
 # Remplir DB_HOST, DB_USER, DB_PASSWORD, JWT_SECRET
 npm run dev
 ```
-API sur **http://localhost:5000**
+
 
 ### 3. Frontend
 ```bash
 cd frontend
 npm install
 npm start
-```
-Site sur **http://localhost:3000**
+
 
 ---
 
